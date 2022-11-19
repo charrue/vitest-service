@@ -1,12 +1,6 @@
-# README
+# vitest-service
 
-## 开始使用
-``` bash
-pnpm install
+基于Vitest做的服务增强
 
-# development
-npm run dev
-
-# production
-npm run build
-```
+- [x] msw服务集成
+- [ ] toHaveWarned

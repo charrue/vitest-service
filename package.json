@@ -40,13 +40,15 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup src/index.ts --watch",
-    "postinstall": "npx husky install",
+    "husky": "npx husky install",
     "lint": "eslint src/**/*.ts --cache",
     "prepublishOnly": "npm run build",
     "prettier": "prettier --write src/**/*.ts",
     "start": "esno src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "web-deploy:build": "web-deploy build",
+    "postweb-deploy:build": "web-deploy postbuild"
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
