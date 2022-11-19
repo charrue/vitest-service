@@ -1,7 +1,7 @@
 {
   "name": "@charrue/vitest-service",
-  "version": "0.0.1",
-  "description": "基于vitest做测试功能增强服务",
+  "version": "0.0.2",
+  "description": "service enhancement based on vitest",
   "keywords": [
     "vitest",
     "msw",
