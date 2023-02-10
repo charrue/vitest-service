@@ -53,6 +53,7 @@
     "@faker-js/faker": "^7.6.0",
     "@pinia/testing": "^0.0.14",
     "@vue/test-utils": "^2.2.10",
+    "element-plus": "^2.2.29",
     "msw": "^0.48.2",
     "pinia": "^2.0.30",
     "qs": "^6.11.0",
@@ -63,6 +64,7 @@
   "devDependencies": {
     "@charrue/eslint-config-typescript": "latest",
     "@charrue/eslint-config-vue3": "^0.2.0",
+    "@charrue/toolkit": "^0.14.1",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@trivago/prettier-plugin-sort-imports": "^3.4.0",

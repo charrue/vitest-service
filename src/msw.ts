@@ -1,4 +1,5 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
+import { noop, sleep } from "@charrue/toolkit";
 import { rest } from "msw";
 import type { RestHandler } from "msw";
 import { setupServer } from "msw/node";
@@ -8,12 +9,16 @@ import { afterAll, afterEach, beforeAll } from "vitest";
 import { getPropertyValue } from "./swagger";
 import type { Swagger } from "./types";
 
+type SleepTime = number | Record<string | "*", number>;
+
 class MSWServer {
   private server: ReturnType<typeof setupServer> | null = null;
   private baseUrl = "";
+  private sleepTime: SleepTime = 0;
 
-  startServer = async (swaggerPath?: string, baseUrl?: string) => {
+  startServer = async (swaggerPath?: string, baseUrl?: string, defaultSleepTime: SleepTime = 0) => {
     this.baseUrl = baseUrl || "";
+    this.sleepTime = defaultSleepTime;
 
     if (swaggerPath) {
       const parser = new SwaggerParser();
@@ -81,9 +86,19 @@ class MSWServer {
 
         const data = typeof response === "function" ? response(body, { error, fail }) : response;
 
+        await sleep(this.getApiSleepTime(url));
+
         return res(ctx.status(error ? 500 : 200), ctx.json(data));
       }),
     );
+  };
+
+  private getApiSleepTime = (url: string) => {
+    if (typeof this.sleepTime === "number") {
+      return Math.max(this.sleepTime, 0);
+    }
+
+    return Math.max(this.sleepTime[url] || this.sleepTime["*"] || 0, 0);
   };
 }
 

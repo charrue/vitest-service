@@ -1,5 +1,6 @@
 import { TestingOptions, createTestingPinia } from "@pinia/testing";
 import { mount } from "@vue/test-utils";
+import EP from "element-plus";
 import { vi } from "vitest";
 import { RouterOptions, createRouter, createWebHashHistory } from "vue-router";
 
@@ -26,7 +27,7 @@ export const createMountFactory = (options: Options = {}) => {
   const TMount = (Comp: any) => {
     const wrapper = mount(Comp, {
       global: {
-        plugins: [TPinia, TRouter],
+        plugins: [TPinia, TRouter, EP],
       },
     });
 
