@@ -1,6 +1,6 @@
 {
   "name": "@charrue/vitest-service",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "service enhancement based on vitest",
   "keywords": [
     "vitest",
@@ -46,24 +46,29 @@
     "prettier": "prettier --write src/**/*.ts",
     "start": "esno src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "web-deploy:build": "web-deploy build",
-    "postweb-deploy:build": "web-deploy postbuild"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
     "@faker-js/faker": "^7.6.0",
+    "@pinia/testing": "^0.0.14",
+    "@vue/test-utils": "^2.2.10",
     "msw": "^0.48.2",
+    "pinia": "^2.0.30",
     "qs": "^6.11.0",
-    "vitest": "latest"
+    "vitest": "^0.28.4",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@charrue/eslint-config-typescript": "latest",
+    "@charrue/eslint-config-vue3": "^0.2.0",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@trivago/prettier-plugin-sort-imports": "^3.4.0",
     "@types/node": "^18.7.5",
     "@types/qs": "^6.9.7",
+    "@vitejs/plugin-vue": "^4.0.0",
     "conventional-changelog": "^3.1.25",
     "conventional-changelog-cli": "^2.2.2",
     "cz-conventional-changelog": "^3.3.0",
@@ -71,6 +76,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^7.0.4",
+    "jsdom": "^21.1.0",
     "nano-staged": "^0.8.0",
     "prettier": "^2.7.1",
     "tsup": "^6.4.0",
