@@ -1,5 +1,16 @@
+<script lang="ts" setup>
+import { ref } from "vue";
+
+const currentDate = ref(new Date("2024/01/01"));
+
+const disabledDate = (date: Date) => {
+  return date.getTime() < new Date("2023/02/03").getTime();
+};
+</script>
+
 <template>
   <LoginForm></LoginForm>
+  <el-date-picker v-model="currentDate" :disabled-date="disabledDate"></el-date-picker>
 </template>
 
 <style scoped>

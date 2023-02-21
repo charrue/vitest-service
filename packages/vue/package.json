@@ -1,0 +1,50 @@
+{
+  "name": "@charrue/test-vue",
+  "version": "0.1.0",
+  "description": "vitest msw vue utils",
+  "keywords": [
+    "vitest",
+    "vue"
+  ],
+  "homepage": "https://github.com/charrue/vitest-service",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charrue/vitest-service",
+    "directory": "packages/msw"
+  },
+  "license": "MIT",
+  "author": "ckangwen",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@pinia/testing": "^0.0.14",
+    "@vue/test-utils": "^2.2.10",
+    "element-plus": "^2.2.29",
+    "pinia": "^2.0.30",
+    "qs": "^6.11.0",
+    "vitest": "^0.28.4",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0"
+  }
+}

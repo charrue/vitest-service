@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { createMountFactory } from "../src/vue";
+import { createMountFactory } from "../src/index";
 import Demo2 from "./feature/demo-store.vue";
 import Demo from "./feature/demo.vue";
 import { useUser } from "./feature/store/user";

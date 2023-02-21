@@ -1,5 +1,5 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
-import { noop, sleep } from "@charrue/toolkit";
+import { sleep } from "@charrue/toolkit";
 import { rest } from "msw";
 import type { RestHandler } from "msw";
 import { setupServer } from "msw/node";

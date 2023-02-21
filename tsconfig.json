@@ -10,6 +10,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
-  },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  }
 }
