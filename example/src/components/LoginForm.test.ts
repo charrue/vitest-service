@@ -1,4 +1,4 @@
-import { createMountFactory } from "@charrue/vitest-service";
+import { createMountFactory } from "@charrue/test-vue";
 import { test } from "vitest";
 
 import LoginForm from "./LoginForm.vue";

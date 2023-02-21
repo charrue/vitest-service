@@ -1,4 +1,4 @@
-import { registerMock, startServer } from "@charrue/vitest-service";
+import { startServer } from "@charrue/test-msw";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
