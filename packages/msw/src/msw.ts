@@ -63,7 +63,7 @@ class MSWServer {
     });
   };
 
-  registerMock = (
+  overrideRequest = (
     url: string,
     response:
       | any
@@ -93,6 +93,8 @@ class MSWServer {
     );
   };
 
+  getServer = () => this.server;
+
   private getApiSleepTime = (url: string) => {
     if (typeof this.sleepTime === "number") {
       return Math.max(this.sleepTime, 0);
@@ -102,6 +104,4 @@ class MSWServer {
   };
 }
 
-const { startServer, registerMock } = new MSWServer();
-
-export { startServer, registerMock };
+export const { startServer, overrideRequest, getServer } = new MSWServer();
